@@ -1,0 +1,254 @@
+body {
+    font-family: 'Dancing Script', cursive;
+    background:#23170e;
+    /*font-size: 36px;*/
+     
+}
+
+html { font-size: calc(1em + 1vw) }
+
+.body-navbar{
+    font-family: 'Leckerli One', cursive;
+    background:#23170e;
+}
+.font-mayus{
+     font-family: 'Dancing Script', cursive;
+   /* font-size: 48px;*/
+    font-weight: bold;
+}
+
+
+a:hover{
+    color:#82361e;
+}
+
+
+#body-info { 
+    background: #000000;
+ }
+
+footer{
+    color: #f5e7bd; 
+    background: #000000;
+}
+
+.navbar-custom{ 
+    background-color: rgba(100,100,80,0.5);
+
+ }
+
+ .navbar-toggler {
+  border-color: #23170e;
+} 
+
+ .navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+      color: #f5e7bd; 
+}
+
+
+.container{
+    max-width: 90%;
+    
+}
+
+#texto1{
+    text-align: center;
+}
+#texto2{
+    text-align: center;
+}
+#texto3{
+    text-align: center;
+}
+#texto4{
+    text-align: center;
+}
+#texto5{
+    text-align: center;
+}
+#texto6{
+    text-align: center;
+}
+
+#texto7{
+    text-align: left;
+}
+
+#form-iniciar-sesion {
+    background: rgba(100,100,80,0.5);
+}
+
+#iniciar-sesion {
+    color: #23170e;
+    background: url(../images/container-cuenta2.jpg);
+}
+
+#about{
+    background: linear-gradient(#043e11, #0d8228);
+    text-align: center;
+    color:#23170e;
+}
+
+
+.reserva{
+    background: url(../images/reservation.png);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    text-align: center;
+    color:#23170e;
+    height: 100%;
+}
+
+
+.container-extra{
+  max-width: 25%;
+}
+
+
+#texto-der{
+    text-align: center;
+}
+
+.botones { 
+   color: #23170e;
+    background: #f5e7bd;
+ }
+
+ .botones4 { 
+   color: #f5e7bd;
+    background: #23170e;
+    border-color:#23170e;
+ }
+
+
+ .boton-reservar { 
+    background: url(../images/reserva-ico.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50% 0;
+    border-color: transparent;
+    
+ }
+
+ .boton-salir { 
+    background: url(../images/logout.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50% 0;
+    border-color: transparent;
+    
+ }
+
+ .boton-ver-reserva { 
+    background: url(../images/lupa.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50% 0;
+    border-color: transparent;
+    
+ }
+
+ .botones2 {
+    color: #23170e;
+
+ }
+
+ .custom-card{
+    background-color:#f5e7bd;
+    
+}
+
+.custom-card2{
+    background-color:#5f4213;
+
+}
+
+.botones3 {
+    color: #f5e7bd;
+
+ }
+
+ .botones2:hover {
+     color:#4b985d;
+}
+
+.botones3:hover {
+     color:#4b985d;
+}
+
+
+
+
+
+.card-bottom {
+     background-color:#c3b896; 
+}
+
+.card-bottom2 {
+     background-color:#5f4213c4;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+
+ .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.center-venc {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+ .center2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+.subheading {
+    font-size: 3px;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #7f6f3d 0%, #3e3312 100%);
+}
+
+.font{
+   color: #0d8228;
+}
+
+.font2{
+  color: #1a6d2d;
+}
+
+.font3{
+    color:#f5e7bd;
+}
+.font4{
+    color:#82361e;
+}
+
+iframe {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    margin: auto ;
+    left: 0;
+    border:none;
+    }
+    body{margin:0px;}
+
