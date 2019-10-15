@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<META HTTP-EQUIV="Access-Control-Allow-Origin" CONTENT="index.html">
+    <title>Añoranzas Chaqueñas</title>
+
+     <!-- BOOSTRAP URL-->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+     <!-- GOOGLE FONT -->
+     <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+
+ 
+     <!-- CUSTOM CSS -->
+     <link rel="stylesheet" href="css/style.css">
+ 
+     <!-- SCROLL REVEAL -->
+     <script src="https://unpkg.com/scrollreveal"></script>
+ 
+     <!-- BOOSTRAP JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k90mg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+	
+	<script>
+		function login() {
+			var xmlHttp = new XMLHttpRequest();
+
+			var usernameIn = window.document.getElementById("username").value;
+			var passwordIn = window.document.getElementById("password").value;
+
+			if (usernameIn != null && passwordIn != null) {
+				if (usernameIn != "" && passwordIn != "") {
+					var url = "http://localhost:8080/clients/account/".concat(usernameIn,"/",passwordIn);
+			
+    				xmlHttp.open( "GET", url, false ); 
+    				xmlHttp.send( null );
+
+					var usernameRes;
+					var passwordRes;
+			
+					if (xmlHttp.status >= 200 && xmlHttp.status < 300 && xmlHttp.responseText != "") {
+						var user = JSON.parse(xmlHttp.responseText);
+						usernameRes = user.account.username;
+						passwordRes = user.account.password;
+					}
+					
+					if (usernameRes == usernameIn && passwordRes == passwordIn) {
+						window.parent.document.usuario = JSON.parse(xmlHttp.responseText);
+						showInfo();
+					} else {
+						showAccountError();
+					}
+				} else {
+					showAccountError();
+				}
+			} else {
+				showAccountError();
+			}
+		}
+
+    	function showInfo() {
+			window.location = "info.html";
+		}
+
+		function showAccountError() {
+			///// ACA ESCRIBIRR PANTALLA DE ERROR DE LOGUEO
+		}
+
+    </script>
+
+
+	<div>
+		<section id="iniciar-sesion">
+			<div class="container container-info" >
+						<div class="row mb-3"></div>
+				
+					<div class="row">
+					<div class="col-md-5 mt-5 mb-3">
+						<h3 class="container-info font-mayus">Iniciar Sesión</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+					<div class="header-content-right" id="texto7"> <p>Ingresá los datos de tu cuenta</p> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5">
+						<form class="card my-4" id="form-iniciar-sesion">
+							<div class="card-body">
+								<div class="form-group">
+									<input type="text" id="username" placeholder="Nombre de Usuario" class="form-control header-content-right">
+								</div>
+								<div class="form-group">
+									<input type="password" id="password" placeholder="Contraseña" class="form-control header-content-right">
+								</div>
+
+								  
+								<a class="btn btn-outline-secondary btn-block botones header-content-right" href="javascript:void(0)" onclick="login()">Iniciar Sesión</a>
+								
+								
+							</div>
+						</form>
+						</div>
+				</div>
+				
+				<div class="row mt-5 "></div>
+				<div class="row mt-5 "></div>
+				<div class="row mt-5 "></div>
+				<div class="row mt-5 "></div>
+
+
+				
+				
+			</div>
+		</section>
+
+	</div>
+
+    <script>
+    	window.sr = ScrollReveal();
+    	sr.reveal( '.header-content-left', {
+    		duration:2000,
+    		origin:'top',
+    		distance:'300px'
+    	});
+
+    	window.sr = ScrollReveal();
+    	sr.reveal( '.header-content-right', {
+    		duration:2000,
+    		origin:'right',
+    		distance:'300px'
+    	});
+
+    	window.sr = ScrollReveal();
+    	sr.reveal( '.container-info', {
+    		duration:2000,
+    		origin:'bottom',
+    		distance:'300px'
+    	});
+    </script>
+
+</body>
+
+</html>

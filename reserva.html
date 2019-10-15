@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Añoranzas Chaqueñas</title>
+
+    <!--CUSTOM SCRIPTS-->
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+     <!-- BOOSTRAP URL-->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+     <!-- GOOGLE FONT -->
+     <link href="https://fonts.googleapis.com/css?family=Leckerli+One&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+
+ 
+     <!-- CUSTOM CSS -->
+     <link rel="stylesheet" href="css/style.css">
+ 
+     <!-- SCROLL REVEAL -->
+     <script src="https://unpkg.com/scrollreveal"></script>
+ 
+     <!-- BOOSTRAP JS -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k90mg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+     
+
+      <!--DATEPICKER-->
+      <script src="libs/datepicker/js/bootstrap-datepicker.min.js" charset="utf-8"></script>
+     	<link rel="stylesheet" href="libs/datepicker/css/bootstrap-datepicker.css">
+
+</head>
+
+<body>
+
+	<script>
+
+		var fechaReserva;
+		
+		function showInfo() {
+			window.location = "info.html";
+		}
+
+		function saveReservation() {
+			
+			var dateNow = new Date().toISOString().slice(0,10);
+			
+			let newReservation = {
+				createdDate: dateNow,
+				reservationDate: window.document.getElementById("reservationDate").value,
+				reservationDays: document.getElementById("cant-dias").value,
+				status: 1,
+				people: document.getElementById("cant-personas").value,
+				room: {serviceCost: 2, roomNumber: 15, typeName: "double"}
+			}
+
+			console.log(newReservation);
+			window.location = "ver-reservas.html";
+		}
+
+	</script>
+	
+<div>
+		<section class="reserva">
+			<div class="row mb-4"></div>
+			<div class="container" >
+				<div class="accordion container-info" id="accordionExample">
+				  <div class="card ">
+				    <div class="card-header custom-card " id="headingOne">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link botones2" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+				          <h3>Simple</h3>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+				      <div class="card-body card-bottom">
+				      	<div class="col-md-4 center2 mb-4">
+				      	    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                          <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/simple-1.jpg" alt="simple-1">
+                                            </div>
+                                            <div class="carousel-item">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/simple-2.jpg" alt="simple-2">
+                                            </div>
+                                            <div class="carousel-item">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/simple-3.jpg" alt="simple-3">
+                                            </div>
+                                          </div>
+                         	</div>
+                         </div>
+                         <p>
+                         	 Habitaciones para una persona con todo el comfort y calidez necesarios para brindar una experiencia de relajación y goze únicos, cuentan con un baño exclusivo con agua caliente, TV satelital, wi-fi, aire acondicionado, frigobar y un amoblamiento de calidad preparados para darte esa sensación que buscás... 
+                         </p>
+
+                         <p>
+                         	COSTO: $800 ARS / Noche
+                         </p>
+				      
+				      </div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header custom-card2" id="headingTwo">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed botones3" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				          <h3>Doble/Matrimonial</h3>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+				      <div class="card-body card-bottom2">
+				     <div class="col-md-4 center2 mb-4">
+				      	    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                          <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/doble-1.jpg" alt="doble-1">
+                                            </div>
+                                            <div class="carousel-item">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/doble-2.jpg" alt="doble-2">
+                                            </div>
+                                            <div class="carousel-item">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/doble-3.jpg" alt="doble-3">
+                                            </div>
+                                          </div>
+                         	</div>
+                         </div>
+                         <p>
+                         	 Habitaciones para dos personas con la posibilidad de una cama matrimonial o camas separadas, porque en pareja se disfrutan más esos momentos únicos. Las piezas cuentan con dos baños exclusivos, ambos con ducha y agua caliente, TV satelital, wi-fi, frigobar, aire acondicionado, un balcón con una hermosa vista y amoblamiento cómodo para que disfrutes junto a esa persona tan especial... 
+                         </p>
+
+                          <p>
+                         	COSTO: $1000 ARS / Noche
+                         </p>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header custom-card" id="headingThree">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed botones2" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				          <h3>Familiar</h3>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+				      <div class="card-body card-bottom">
+				     <div class="col-md-4 center2 mb-4">
+				      	    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                          <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/familiar-1.jpg" alt="familiar-1">
+                                            </div>
+                                            <div class="carousel-item">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/familiar-2.jpg" alt="familiar-2">
+                                            </div>
+                                            <div class="carousel-item">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/doble-2.jpg" alt="familiar-3">
+                                            </div>
+                                          </div>
+                         	</div>
+                         </div>
+                         <p>
+                         	 Habitaciones para la familia con todas las comodidades que una habitación doble puede brindar, pero con 1 cama matrimonial, 3 camas individuales y bañera en uno de los baños. Viví una experiencia inolvidable acompañado de las personas que mas querés y relajate junto con ellos mientras disfrutás de la flora y fauna tan vívida que el Chaco tiene para dar...
+
+                          <p>
+                         	COSTO: $1500 ARS / Noche
+                         </p>
+				      </div>
+				    </div>
+				  </div>
+				<div class="card">
+				    <div class="card-header custom-card2" id="headingFour">
+				      <h2 class="mb-0">
+				        <button class="btn btn-link collapsed botones3" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+				          <h3>Premium</h3>
+				        </button>
+				      </h2>
+				    </div>
+				    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+				      <div class="card-body card-bottom2">
+				     <div class="col-md-4 center2 mb-4">
+				      	    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                          <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/premium-1.jpg" alt="premium-1">
+                                            </div>
+                                            <div class="carousel-item">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/premium-2.jpg" alt="premium-2">
+                                            </div>
+                                            <div class="carousel-item">
+                                              <img class="d-block w-100" width="300px" height="200px" src="images/premium-3.jpg" alt="premium-3">
+                                            </div>
+                                          </div>
+                         	</div>
+                         </div>
+                         <p>
+                         	 La suite premium es mas que una habitación, es una elección ideal para aquel que quiera sacar el máximo provecho de una experiencia única de relajación ya sea solo o en pareja. Cuenta con una cama matrimonial y amoblamiento de altísima calidad, TV satelital de alta definición, wi-fi propio de la suite, baño premium con bañera y agua caliente, aire acondicionado, frigobar y un balcon con la mejor vista de la posada...
+                         </p>
+
+                          <p>
+                         	COSTO: $3000 ARS / Noche
+                         </p>
+				      </div>
+				    </div>
+				  </div>
+			</div>	
+
+			<div class="row mt-5"><h3>Elija su habitación</h3></div>
+
+			<div class="row mt-3">
+				<div class="col">
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="h-simple">
+					  <label class="form-check-label font-bold" for="exampleRadios1">
+					    Simple
+					  </label>
+					</div>
+				</div>
+					<div class="col">
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="h-doble">
+					  <label class="form-check-label font-bold" for="exampleRadios1">
+					   	Doble
+					  </label>
+					</div>
+				</div>
+					<div class="col">
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="h-fam">
+					  <label class="form-check-label font-bold" for="exampleRadios1">
+					    Familiar
+					  </label>
+					</div>
+				</div>
+			</div>	
+			<div class="row mt-3">
+				<div class="col">
+					<div class="form-check">
+					  <input class="form-check-input" type="radio" name="exampleRadio" id="exampleRadios1" value="h-prem">
+					  <label class="form-check-label font-bold" for="exampleRadios1">
+					    Premium
+					  </label>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<h2 class="mt-3">Fecha de ingreso</h2>
+			</div>
+
+			<button type="button" id="boton-fecha" class="btn botones mt-3">Ver Fecha</button>
+
+			<div class="modal" id="modal-date" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content custom-card">
+			      <div class="modal-header">
+			        <h5 class="modal-title">Seleccione la fecha</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			        <div class="input-group date  fecha-picker">
+					  <input type="text" class="form-control" id="reservationDate" placeholder="Seleccionar Fecha"><span class="input-group-addon" ><i class="glyphicon glyphicon-th"></i></span>
+					</div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-primary botones4" data-dismiss="modal">Aceptar</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+			<div class="row mt-3">
+				<h2 class="mt-3">Cantidad de personas</h2>
+			</div>
+			<div class="row mt-3">
+				<div class="col">
+			<div class="form-group d-block">
+				
+				<select id="cant-personas" >
+					<option value="1" name="op1" >1</option>
+					<option value="2" name="op2" >2</option>
+					<option value="3" name="op3" >3</option>
+					<option value="4" name="op4" >4</option>
+					<option value="5" name="op5" >5</option>
+				</select>
+			</div>
+			</div>
+			</div>
+
+
+			<div class="row">
+				<h2 class="mt-3 ">Estadía</h2>
+			</div>
+			<div class="row mt-3 ">
+				<div class="col">
+				<div class="form-group d-block">
+				
+				<select id="cant-dias" >
+					<option value="1" name="dia1" >1</option>
+					<option value="2" name="dia2" >2</option>
+					<option value="3" name="dia3" >3</option>
+					<option value="4" name="dia4" >4</option>
+					<option value="5" name="dia5" >5</option>
+					<option value="6" name="dia6" >6</option>
+					<option value="7" name="dia7" >7</option>
+					<option value="8" name="dia8" >8</option>
+					<option value="9" name="dia9" >9</option>
+					<option value="10" name="dia10" >10</option>
+					<option value="11" name="dia11" >11</option>
+					<option value="12" name="dia12" >12</option>
+					<option value="13" name="dia13" >13</option>
+					<option value="14" name="dia14" >14</option>
+					<option value="15" name="dia15" >15</option>
+				</select>
+				<p>Días</p>
+			</div>
+			</div>
+			</div>
+			<div class="row">
+				<h2 class="mt-3 ">Pagar con tarjeta</h2>
+			</div>
+			<button type="button" id="boton-tarjeta" class="btn botones mt-3 ">Cargar Tarjeta</button>
+
+			<div class="modal" id="modal-tarjeta" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content custom-card">
+			      <div class="modal-header">
+			        <h5 class="modal-title">Ingrese los datos de su tarjeta</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			      	<p>Numero de tarjeta (16 dígitos)</p>
+			        <div class="row">
+			       
+			        	<input type="text" class="center" name="numero-tarj">
+			       
+			        </div>
+			        <p class="mt-3">Clave de seguridad (3 dígitos del dorso)</p>
+			        <div class="row">
+			        	<input type="text" class="center-venc" name="clave-seguridad">
+			        </div>
+			        <p class="mt-3">Fecha de vencimiento</p>
+			        <div class="row">
+			        	<div class="col">
+			        	<div class="center-venc">
+			        	<div class="input-group date venc-picker">
+  							<input type="text" class="form-control" ><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+						</div>
+						</div>
+						</div>
+			        </div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-primary botones4">Aceptar</button>
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+			<div class="row mt-5 ">
+				<div class="col">
+					<a class="btn btn-outline-secondary botones" href="javascript:void(0)" onclick="showInfo()">Volver</a>
+				</div>
+				<div class="col">
+					<a class="btn btn-outline-secondary botones" href="javascript:void(0)" onclick="saveReservation()">Reservar</a>
+				</div>
+			</div>
+
+			<div class="row mt-3"></div>
+
+			<script src="js/app.js" charset="utf-8">
+				
+			</script>
+
+			<script>
+				$('input[value="h-simple"]').on('click', function()
+					{
+							$('option[name="op1"]').attr('hidden', this.value!="Enable");
+							$('option[name="op2"]').attr('hidden', this.value="Enable");
+							$('option[name="op3"]').attr('hidden', this.value="Enable");
+							$('option[name="op4"]').attr('hidden', this.value="Enable");
+							$('option[name="op5"]').attr('hidden', this.value="Enable");
+					});
+
+				$('input[value="h-doble"]').on('click', function()
+					{
+							$('option[name="op1"]').attr('hidden', this.value!="Enable");
+							$('option[name="op2"]').attr('hidden', this.value!="Enable");
+							$('option[name="op3"]').attr('hidden', this.value="Enable");
+							$('option[name="op4"]').attr('hidden', this.value="Enable");
+							$('option[name="op5"]').attr('hidden', this.value="Enable");
+					});
+
+				$('input[value="h-fam"]').on('click', function()
+					{
+							$('option[name="op0"]').attr('hidden', this.value="Enable");
+							$('option[name="op1"]').attr('hidden', this.value!="Enable");
+							$('option[name="op2"]').attr('hidden', this.value!="Enable");
+							$('option[name="op3"]').attr('hidden', this.value!="Enable");
+							$('option[name="op4"]').attr('hidden', this.value!="Enable");
+							$('option[name="op5"]').attr('hidden', this.value!="Enable");
+					});
+
+				$('input[value="h-prem"]').on('click', function()
+					{
+						$('option[name="op1"]').attr('hidden', this.value!="Enable");
+						$('option[name="op2"]').attr('hidden', this.value!="Enable");
+						$('option[name="op3"]').attr('hidden', this.value="Enable");
+						$('option[name="op4"]').attr('hidden', this.value="Enable");
+						$('option[name="op5"]').attr('hidden', this.value="Enable");
+					});
+			</script>
+
+
+		</div>
+
+		</section>
+
+	</div>
+
+    <script>
+
+    	window.sr = ScrollReveal();
+    	sr.reveal( '.header-content-left', {
+    		duration:2000,
+    		origin:'top',
+    		distance:'300px'
+    	});
+
+    	window.sr = ScrollReveal();
+    	sr.reveal( '.header-content-right', {
+    		duration:2000,
+    		origin:'right',
+    		distance:'300px'
+    	});
+
+    	window.sr = ScrollReveal();
+    	sr.reveal( '.container-info', {
+    		duration:2000,
+    		origin:'bottom',
+    		distance:'300px'
+    	});
+    </script>
+
+</body>
+</html>
