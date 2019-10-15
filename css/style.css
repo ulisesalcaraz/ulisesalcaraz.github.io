@@ -82,6 +82,7 @@ footer{
 #iniciar-sesion {
     color: #23170e;
     background: url(../images/container-cuenta2.jpg);
+    background-size: cover; 
 }
 
 #about{
